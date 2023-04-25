@@ -1,0 +1,23 @@
+
+# Refer to https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html for env args
+version: "3.9" 
+services:
+  modsim-base:
+    ports:
+      - '8888:8888'
+      - '8889:8889'
+      - '1111:22'
+    dns:
+      - 8.8.8.8
+    user: root
+    environment:
+      - NB_USER=jovyan
+      - CHOWN_HOME=yes
+      - CHOWN_EXTRA=modsim-shared
+      - DOCKER_STACKS_JUPYTER_CMD=nbclassic
+    volumes:
+      - ./modsim-shared:/home/jovyan/modsim-shared
+    image: anaegel/modsim-base:latest
+volumes:
+  myFiles:
+    external: true

@@ -1,0 +1,4 @@
+octave_kernel
+sympy
+numpy
+matplotlib

@@ -1,0 +1,4 @@
+cmake
+clang
+llvm
+libopenmpi-dev 

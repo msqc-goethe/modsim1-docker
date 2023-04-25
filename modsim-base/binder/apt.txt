@@ -1,0 +1,4 @@
+gnuplot 
+octave
+pkg-config 
+liboctave-dev 

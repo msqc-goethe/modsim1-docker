@@ -1,0 +1,2 @@
+docker buildx build -t anaegel/modsim-base:latest --platform linux/amd64, linux/arm64 --push modsim-base/. 
+docker buildx build -t anaegel/modsim1:latest --platform linux/amd64,linux/arm64 --push modsim-ug4/.
