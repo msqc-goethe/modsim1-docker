@@ -1,5 +1,4 @@
 FROM jupyter/minimal-notebook AS modsim-base
-# FROM --platform=$BUILDPLATFORM jupyter/minimal-notebook AS modsim
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
@@ -31,13 +30,7 @@ USER jovyan
 WORKDIR ${HOME}
 COPY --chown=jovyan:100 ./modsim-shared /home/jovyan/
 
-# Install UG4
-#FROM modsim-base AS modsim-ug4
-#USER jovyan
-#ENV UG4_ROOT=$HOME/ug4
-#ENV PATH=$PATH:${HOME}/ughub
-#COPY binder/postBuild tmp/postBuild
-#RUN bash tmp/postBuild
+RUN git clone https://github.com/msqc-goethe/modsim1-course-basis.git
 
 
 
